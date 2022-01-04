@@ -9,4 +9,10 @@ public interface BankDataSource {  //this interface will define the functionalit
     public Collection<Bank> retrieveBanks();
 
     public Bank retrieveBank(String accountNumber);
+
+    public Bank createBank(Bank bank);
+
+    public Bank updateBank(Bank bank);
+
+    public void deleteBank(String accountNumber);
 }

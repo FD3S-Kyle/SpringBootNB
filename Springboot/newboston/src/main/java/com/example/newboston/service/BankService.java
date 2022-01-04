@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 public class BankService {
     private BankDataSource dataSource;
 
-    public BankService(BankDataSource dataSource) {
+    public BankService( BankDataSource dataSource) {
         this.dataSource = dataSource;
     }
 
@@ -22,5 +22,17 @@ public class BankService {
 
     public Bank getBank(String accountNumber) {
         return dataSource.retrieveBank(accountNumber);
+    }
+
+    public Bank addBank(Bank bank) {
+        return dataSource.createBank(bank);
+    }
+
+    public Bank updateBank(Bank bank) {
+        return dataSource.updateBank(bank);
+    }
+
+    public void deleteBank(String accountNumber) {
+        dataSource.deleteBank(accountNumber);
     }
 }
